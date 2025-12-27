@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player UI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+        }
+
+        /* ===== PLAYER CARD ===== */
+        .player {
+            background: #ffffff;
+            width: 300px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* ===== ALBUM IMAGE ===== */
+        .cover {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: rotate 6s linear infinite;
+        }
+
+        /* ===== TEXT ===== */
+        .player h2 {
+            margin-bottom: 5px;
+        }
+
+        .artist {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .progress {
+            width: 100%;
+            height: 6px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            width: 60%;
+            height: 100%;
+            background: #00adb5;
+        }
+
+        /* ===== CONTROLS ===== */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .controls button {
+            font-size: 20px;
+            padding: 10px 14px;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .controls button:hover {
+            transform: scale(1.2);
+            background: #00adb5;
+            color: white;
+        }
+
+        .play {
+            font-size: 24px;
+        }
+
+        /* ===== ROTATION ANIMATION ===== */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="player">
+    <img src="album.jpg" alt="Album Cover" class="cover">
+
+    <h2>Sample Song</h2>
+    <p class="artist">Unknown Artist</p>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button>⏮</button>
+        <button class="play">▶</button>
+        <button>⏭</button>
+    </div>
+</div>
+
+</body>
+</html>
